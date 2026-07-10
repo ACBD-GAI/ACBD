@@ -77,7 +77,15 @@ button:hover{
 
 
 <h2>
-🏬 ACEBEDO OPTICAL
+<img src="https://drive.google.com/thumbnail?id=1U9kmQ7qummOCpVppdLtmVaugMuzLYUWQ&sz=w200"
+style="
+width:60px;
+height:60px;
+object-fit:contain;
+vertical-align:middle;
+margin-right:10px;
+">
+ACEBEDO OPTICAL
 </h2>
 
 
@@ -86,8 +94,25 @@ Welcome
 </p>
 
 
-<button onclick="openInventory()">
-OPEN INVENTORY SCANNER
+<select id="systemSelect">
+
+<option value="">
+SELECT SYSTEM
+</option>
+
+<option value="inventory">
+INVENTORY SCANNER
+</option>
+
+<option value="system2">
+SECOND SYSTEM
+</option>
+
+</select>
+
+
+<button onclick="openSystem()">
+OPEN
 </button>
 
 
@@ -97,8 +122,13 @@ OPEN INVENTORY SCANNER
 
 <script>
 
+function openSystem(){
 
-function openInventory(){
+const choice =
+document.getElementById("systemSelect").value;
+
+
+if(choice === "inventory"){
 
 sessionStorage.setItem("fromGateway","YES");
 
@@ -107,6 +137,24 @@ window.location.href =
 
 }
 
+
+else if(choice === "system2"){
+
+
+window.location.href =
+"https://acbd-gai.github.io/ACBDCAS/";
+
+
+}
+
+
+else{
+
+alert("Please select a system");
+
+}
+
+}
 
 </script>
 
