@@ -4,7 +4,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>INVENTORY SYSTEM</title>
+<title>ACEBEDO OPTICAL</title>
 
 <style>
 
@@ -64,6 +64,74 @@ button:hover{
 
 }
 
+    /* DROPDOWN STYLE */
+
+select{
+
+    width:280px;
+
+    padding:15px 18px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:
+    linear-gradient(135deg,#e3f2fd,#ffffff);
+
+    color:#1976d2;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    outline:none;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.12);
+
+    appearance:none;
+
+    background-image:
+    linear-gradient(45deg, transparent 50%, #1976d2 50%),
+    linear-gradient(135deg, #1976d2 50%, transparent 50%);
+
+    background-position:
+    calc(100% - 20px) 50%,
+    calc(100% - 15px) 50%;
+
+    background-size:
+    6px 6px,
+    6px 6px;
+
+    background-repeat:no-repeat;
+
+    transition:.3s;
+
+}
+
+
+select:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 10px 25px rgba(25,118,210,.25);
+
+}
+
+
+select:focus{
+
+    box-shadow:
+    0 0 0 4px rgba(33,150,243,.25);
+
+}
+
 
 </style>
 
@@ -97,18 +165,20 @@ Welcome
 <select id="systemSelect">
 
 <option value="">
-SELECT SYSTEM
+🏢 SELECT BRANCH
 </option>
 
-<option value="inventory">
-INVENTORY SCANNER
+<option value="BAC">
+BACOLOD
 </option>
 
-<option value="system2">
-SECOND SYSTEM
+<option value="BAC">
+🏬 BACOLOD BRANCH
 </option>
 
-</select>
+<option value="CAS">
+🏬 CASA BRANCH
+</option>
 
 
 <button onclick="openSystem()">
@@ -128,7 +198,7 @@ const choice =
 document.getElementById("systemSelect").value;
 
 
-if(choice === "inventory"){
+if(choice === "BAC"){
 
 sessionStorage.setItem("fromGateway","YES");
 
@@ -138,7 +208,7 @@ window.location.href =
 }
 
 
-else if(choice === "system2"){
+else if(choice === "CAS"){
 
 
 window.location.href =
