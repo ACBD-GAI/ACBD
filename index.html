@@ -219,7 +219,10 @@ document.getElementById("systemSelect").value;
 
 if(choice === "BAC"){
 
+clearBranchLogin();
+
 sessionStorage.setItem("fromGateway","YES");
+sessionStorage.setItem("selectedBranch","BAC");
 
 window.location.href =
 "https://acbd-gai.github.io/SOLD-BAC/";
@@ -229,12 +232,13 @@ window.location.href =
 
 else if(choice === "CAS"){
 
+clearBranchLogin();
 
 sessionStorage.setItem("fromGateway","YES");
+sessionStorage.setItem("selectedBranch","CAS");
 
 window.location.href =
 "https://acbd-gai.github.io/ACBDCAS/";
-
 
 }
 
@@ -247,6 +251,28 @@ alert("Please select a system");
 
 }
 
+function clearBranchLogin(){
+
+Object.keys(localStorage).forEach(key=>{
+
+if(key.startsWith("inventorySession_")){
+
+localStorage.removeItem(key);
+
+}
+
+});
+
+
+localStorage.removeItem("inventoryLoggedIn");
+localStorage.removeItem("loginTime");
+
+sessionStorage.removeItem("selectedBranch");
+
+}
+
+    
+    
 </script>
 
 
