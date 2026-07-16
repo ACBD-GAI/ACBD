@@ -195,6 +195,12 @@ Welcome
 🏬 BACOLOD BRANCH
 </option>
 
+<option value="GAI">
+🏬 GAISANO ILOILO BRANCH
+</option>
+    
+    
+
 <option value="CAS">
 🏬 CASA BRANCH
 </option>
@@ -239,6 +245,18 @@ sessionStorage.setItem("selectedBranch","CAS");
 
 window.location.href =
 "https://acbd-gai.github.io/ACBDCAS/";
+
+}
+    
+else if(choice === "GAI"){
+
+clearBranchLogin();
+
+sessionStorage.setItem("fromGateway","YES");
+sessionStorage.setItem("selectedBranch","GAI");
+
+window.location.href =
+"https://acbd-gai.github.io/GAI-ILO/";
 
 }
 
