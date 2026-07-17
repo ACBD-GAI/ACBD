@@ -187,9 +187,15 @@ Welcome
 
 <select id="systemSelect">
 
-<option value="">
+
+    <option value="">
 🏢 SELECT BRANCH
 </option>
+
+<option value="">
+🏢 DASHBOARD
+</option>
+    
 
 <option value="BAC">
 🏬 BACOLOD BRANCH
@@ -259,6 +265,19 @@ window.location.href =
 "https://acbd-gai.github.io/GAI-ILO/";
 
 }
+
+else if(choice === "DASHBOARD"){
+
+clearBranchLogin();
+
+sessionStorage.setItem("fromGateway","YES");
+sessionStorage.setItem("selectedBranch","DASHBOARD");
+
+window.location.href =
+"https://acbd-gai.github.io/dashboard/";
+
+}
+    
 
 
 else{
