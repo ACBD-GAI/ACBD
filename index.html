@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>ACEBEDO OPTICAL</title>
 
 <style>
-
 body{
     margin:0;
     height:100vh;
@@ -15,304 +12,129 @@ body{
     justify-content:center;
     align-items:center;
     background:#eef2f7;
-    font-family:Arial;
+    font-family:Arial,sans-serif;
 }
 
 .card{
-
-    background:white;
+    background:#fff;
     padding:40px;
     border-radius:20px;
-
     text-align:center;
-
     box-shadow:0 10px 30px rgba(0,0,0,.15);
-
 }
 
 h2{
     color:#1976d2;
 }
 
-
-button{
-
-    margin-top:20px;
-
-    padding:15px 30px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#1976d2;
-
-    color:white;
-
-    font-size:16px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
+p{
+    color:#555;
 }
-
-
-button:hover{
-
-    background:#1565c0;
-
-}
-
-    /* DROPDOWN STYLE */
 
 select{
-
-    width:280px;
-
-    padding:15px 18px;
-
+    width:300px;
+    padding:15px;
     margin-top:15px;
-
     border:none;
-
     border-radius:15px;
-
-    background:
-    linear-gradient(135deg,#e3f2fd,#ffffff);
-
+    background:linear-gradient(135deg,#e3f2fd,#fff);
     color:#1976d2;
-
     font-size:16px;
-
     font-weight:bold;
-
     cursor:pointer;
-
     outline:none;
-
-    box-shadow:
-    0 5px 15px rgba(0,0,0,0.12);
-
-    appearance:none;
-
-    background-image:
-    linear-gradient(45deg, transparent 50%, #1976d2 50%),
-    linear-gradient(135deg, #1976d2 50%, transparent 50%);
-
-    background-position:
-    calc(100% - 20px) 50%,
-    calc(100% - 15px) 50%;
-
-    background-size:
-    6px 6px,
-    6px 6px;
-
-    background-repeat:no-repeat;
-
-    transition:.3s;
-
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
 }
 
-
-select:hover{
-
-    transform:translateY(-2px);
-
-    box-shadow:
-    0 10px 25px rgba(25,118,210,.25);
-
-}
-
-
-select:focus{
-
-    box-shadow:
-    0 0 0 4px rgba(33,150,243,.25);
-
-}
-    button{
-
-    width:280px;
-
+button{
+    width:300px;
     margin-top:20px;
-
-    padding:15px 30px;
-
+    padding:15px;
     border:none;
-
     border-radius:12px;
-
     background:#1976d2;
-
-    color:white;
-
+    color:#fff;
     font-size:16px;
-
     font-weight:bold;
-
     cursor:pointer;
-
 }
 
-
+button:hover{
+    background:#1565c0;
+}
 </style>
-
 </head>
-
 
 <body>
 
-
 <div class="card">
-
 
 <h2>
 <img src="https://drive.google.com/thumbnail?id=1U9kmQ7qummOCpVppdLtmVaugMuzLYUWQ&sz=w200"
-style="
-width:60px;
-height:60px;
-object-fit:contain;
-vertical-align:middle;
-margin-right:10px;
-">
+style="width:60px;height:60px;vertical-align:middle;margin-right:10px;">
 ACEBEDO OPTICAL
 </h2>
 
+<p>Select Branch</p>
 
-<p>
-Welcome
-</p>
+<select id="branch">
 
+<option value="">🏢 SELECT BRANCH</option>
 
-<select id="systemSelect">
+<option value="https://acbd-gai.github.io/dashboards/">🏢 DASHBOARD</option>
 
+<option value="https://acbd-gai.github.io/SOLD-BAC/">🏬 BACOLOD</option>
 
-    <option value="">
-🏢 SELECT BRANCH
-</option>
+<option value="">🏬 BINALBAGAN</option>
 
-<option value="DASHBOARDS">
-🏢 DASHBOARD
-</option>
-    
+<option value="">🏬 BISLIG</option>
 
-<option value="BAC">
-🏬 BACOLOD BRANCH
-</option>
+<option value="">🏬 CADIZ</option>
 
-<option value="GAI">
-🏬 GAISANO ILOILO BRANCH
-</option>
-    
-    
+<option value="https://acbd-gai.github.io/ACBDCAS/">🏬 CASA PLAZA</option>
 
-<option value="CAS">
-🏬 CASA BRANCH
-</option>
+<option value="">🏬 DUMAGUETE</option>
+
+<option value="https://acbd-gai.github.io/GAI-ILO/">🏬 GAISANO ILOILO</option>
+
+<option value="">🏬 KABANKALAN</option>
+
+<option value="">🏬 KALIBO</option>
+
+<option value="">🏬 PASSI</option>
+
+<option value="">🏬 POTOTAN</option>
+
+<option value="">🏬 SAN CARLOS</option>
+
+<option value="">🏬 TABUNOK</option>
+
+<option value="">🏬 TANDAG</option>
+
+<option value="">🏬 TISA</option>
+
+<option value="">🏬 TOLEDO</option>
 
 </select>
 
+<button onclick="openBranch()">OPEN</button>
 
-<button onclick="openSystem()">
-OPEN
-</button>
 </div>
 
-
-
 <script>
+function openBranch(){
 
-function openSystem(){
+const url=document.getElementById("branch").value;
 
-const choice =
-document.getElementById("systemSelect").value;
-
-
-if(choice === "BAC"){
-
-clearBranchLogin();
-
-sessionStorage.setItem("fromGateway","YES");
-sessionStorage.setItem("selectedBranch","BAC");
-
-window.location.href =
-"https://acbd-gai.github.io/SOLD-BAC/";
-
+if(!url){
+alert("Branch link not available.");
+return;
 }
 
-
-else if(choice === "CAS"){
-
-clearBranchLogin();
-
-sessionStorage.setItem("fromGateway","YES");
-sessionStorage.setItem("selectedBranch","CAS");
-
-window.location.href =
-"https://acbd-gai.github.io/ACBDCAS/";
+window.location.href=url;
 
 }
-    
-else if(choice === "GAI"){
-
-clearBranchLogin();
-
-sessionStorage.setItem("fromGateway","YES");
-sessionStorage.setItem("selectedBranch","GAI");
-
-window.location.href =
-"https://acbd-gai.github.io/GAI-ILO/";
-
-}
-
-else if(choice === "DASHBOARDS"){
-
-clearBranchLogin();
-
-sessionStorage.setItem("fromGateway","YES");
-sessionStorage.setItem("selectedBranch","DASHBOARDS");
-
-window.location.href =
-"https://acbd-gai.github.io/dashboards/";
-
-}
-    
-
-
-else{
-
-alert("Please select a system");
-
-}
-
-}
-
-function clearBranchLogin(){
-
-Object.keys(localStorage).forEach(key=>{
-
-if(key.startsWith("inventorySession_")){
-
-localStorage.removeItem(key);
-
-}
-
-});
-
-
-localStorage.removeItem("inventoryLoggedIn");
-localStorage.removeItem("loginTime");
-
-sessionStorage.removeItem("selectedBranch");
-
-}
-
-    
-    
 </script>
 
-
 </body>
-
 </html>
