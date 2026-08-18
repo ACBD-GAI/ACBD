@@ -2704,6 +2704,40 @@ body{
   }
 }
 
+
+
+/* =========================================================
+   COMPACT HD DESKTOP SCANNER
+   VISUAL ONLY — SCANNER JAVASCRIPT UNCHANGED
+   ========================================================= */
+@media (min-width: 1000px){
+  #reader{
+    width:480px !important;
+    max-width:480px !important;
+    min-height:0 !important;
+    height:auto !important;
+    aspect-ratio:16 / 9 !important;
+    margin:0 auto !important;
+    border-radius:18px !important;
+    overflow:hidden !important;
+  }
+
+  #reader video{
+    display:block !important;
+    width:100% !important;
+    height:100% !important;
+    min-height:0 !important;
+    max-height:none !important;
+    aspect-ratio:16 / 9 !important;
+    object-fit:cover !important;
+  }
+
+  /* Keep the HD camera feed crisp without enlarging the scanner box. */
+  #reader__dashboard_section_csr,
+  #reader__dashboard_section_swaplink{
+    font-size:11px !important;
+  }
+}
 </style>
 
 </head>
